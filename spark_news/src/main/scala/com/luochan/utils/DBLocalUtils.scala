@@ -6,7 +6,7 @@ import java.sql.{Connection, DriverManager}
 object DBLocalUtils {
   val url = "jdbc:mysql://localhost:3306/mydatabase?useUnicode=true&characterEncoding=utf-8"
   val username = "root"
-  val password = "luochen1998"
+  val password = "**********"
 
   classOf[com.mysql.jdbc.Driver]
 
