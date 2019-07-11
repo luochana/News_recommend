@@ -65,10 +65,11 @@ object ItemSimilarity {
       {
         LastRecord=temp.getInt(1)+1
       }
+      println("lastrecord is"+LastRecord)
       DBLocalUtils.close(connection)
+      //
       val num=jdbcDF.count()-1
       println("num is :"+num)
-      println("LastRecord is :"+LastRecord)
       var strList = List.empty[String]
       for(i<- 0 to num.toString.toInt)
       {
@@ -95,7 +96,9 @@ object ItemSimilarity {
       import spark.implicits._
       val rddData = spark.sparkContext.parallelize(strList)
       val resultDF = spark.read.json(rddData.toDS)
-      val newsDF= jdbcDF.withColumn("id1",jdbcDF("id")+LastRecord)
+
+      //jdbcDF的新闻id从1开始，而resultDF的id从0开始，为了让两个DF能join，所以id需要+LastRecord再-1
+      val newsDF= jdbcDF.withColumn("id1",jdbcDF("id")+LastRecord-1)
       connection=DBLocalUtils.getConnection()
       newsDF.join(resultDF,newsDF("id1")===resultDF("id1"),"inner").select(newsDF("id1"),newsDF("source_url"),newsDF("tag"),newsDF("articleContent"),newsDF("articleTitle"),resultDF("sim"),resultDF("timeStamp")).collect().foreach(x=>{
         resultInsertIntoMysql(x(0).asInstanceOf[Int],x(1).asInstanceOf[String],x(2).asInstanceOf[String],x(3).asInstanceOf[String],x(4).asInstanceOf[String],x(5).asInstanceOf[String],x(6).asInstanceOf[String])
@@ -124,5 +127,4 @@ object ItemSimilarity {
       case e=>e.printStackTrace()
     }
   }
-
 }
