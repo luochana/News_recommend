@@ -15,12 +15,11 @@ import org.apache.spark.streaming.kafka.KafkaUtils
 log4j->flume->kafka->spark streaming->mysql
 */
 
-
 object KafkaConsumer {
 
   def main(args:Array[String]):Unit={
 
-    val sparkConf = new SparkConf().setAppName("DirectKafkaWordCount").setMaster("local[2]")
+    val sparkConf = new SparkConf().setAppName("KafkaConsumer").setMaster("local[2]")
     val ssc = new StreamingContext(sparkConf, Seconds(20))
     val topicsSet = Set("test")
     val brokers = "192.168.56.101:9092,192.168.56.102:9092,192.168.56.103:9092"

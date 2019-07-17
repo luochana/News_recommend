@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd06b73e-eea6-47f2-b9d3-91001ea221ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_11_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/caseclass/LogsCaseclass.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/recommend/ItemSimilarity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/tools/RecommendKits$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/tools/RecommendKits$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/tools/RecommendKits.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/tools/RecommendKits.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/utils/DBLocalUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/utils/DBLocalUtils$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luochan/utils/DBLocalUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luochan/utils/DBLocalUtils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,17 +23,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="870">
               <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -52,17 +41,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
-              <caret line="38" column="64" lean-forward="true" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+            <state relative-caret-position="345">
+              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="79" lean-forward="true" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
+            <state relative-caret-position="360">
+              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="e#31#57#0" expanded="true" />
               </folding>
@@ -91,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/tools/RecommendKits.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="300">
               <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <element signature="e#27#74#0" expanded="true" />
@@ -126,9 +115,9 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/luochan/caseclass/newsLogsCaseclass.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/luochan/caseclass/LogsCaseclass.scala" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" />
       </list>
     </option>
   </component>
@@ -151,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -216,7 +206,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,18 +287,19 @@
       <workItem from="1563333300620" duration="3707000" />
       <workItem from="1563338454134" duration="2372000" />
       <workItem from="1563341028574" duration="2036000" />
-      <workItem from="1563344665359" duration="802000" />
+      <workItem from="1563344665359" duration="2576000" />
+      <workItem from="1563357967954" duration="251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25054000" />
+    <option name="totallyTimeSpent" value="27079000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1053" extended-state="7" />
+    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27103302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2736954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -350,8 +340,22 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/caseclass/newsLogsCaseclass.scala" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="870">
           <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -371,7 +375,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/tools/RecommendKits.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="300">
           <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="e#27#74#0" expanded="true" />
@@ -379,27 +383,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="38" column="64" lean-forward="true" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="79" lean-forward="true" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
+        <state relative-caret-position="360">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="e#31#57#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
         </state>
       </provider>
     </entry>
