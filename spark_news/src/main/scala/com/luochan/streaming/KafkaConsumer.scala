@@ -35,7 +35,7 @@ object KafkaConsumer {
         try {
           val fields = line.split(",")
           if (fields.length == 4) {
-            userLog = newsLog(fields(0).toInt, fields(1).toInt, fields(2).toFloat,fields(3))
+            userLog = newsLog(fields(0).toInt, fields(1).toInt, fields(2).toDouble,fields(3))
           }
         } catch {
           case e => e.printStackTrace()
@@ -64,14 +64,14 @@ object KafkaConsumer {
     ssc.start()
     ssc.awaitTermination()
 
-    def resultInsertIntoMysql(userId:Int,newsId:Int,rating:Float,timeStamp:String): Unit ={
+    def resultInsertIntoMysql(userId:Int,newsId:Int,rating:Double,timeStamp:String): Unit ={
       try{
         connection=DBLocalUtils.getConnection()
         val sql="insert into newsLogs values(?,?,?,?)"
         val pst=connection.prepareStatement(sql)
         pst.setInt(1, userId)
         pst.setInt(2, newsId)
-        pst.setFloat(3,rating)
+        pst.setDouble(3,rating)
         pst.setString(4,timeStamp)
         pst.execute()
         DBLocalUtils.close(connection)

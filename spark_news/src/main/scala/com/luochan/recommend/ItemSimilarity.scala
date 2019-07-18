@@ -29,7 +29,7 @@ object ItemSimilarity {
       .option("url", "jdbc:mysql://localhost:3306/mydatabase?useUnicode=true&characterEncoding=utf-8")
       .option("dbtable", "news")
       .option("user", "root")
-      .option("password", "**********")
+      .option("password", "***********")
       .load()
 
     jdbcDF.show(100,false)
