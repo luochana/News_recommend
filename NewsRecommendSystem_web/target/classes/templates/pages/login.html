@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><script src=https://res.wx.qq.com/open/js/jweixin-1.2.0.js></script><link href=https://static001.geekbang.org/static/account/css/app.f5b46efe82983d26a8a542a527ff8cd4.css rel=stylesheet>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>用户登陆-今日小站</title>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+
+	<link rel="stylesheet" href="css/skel.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style-wide.css" />
+
+
+	<script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
+
+
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+	<link rel="shortcut icon" href="images/icon1.png">
+
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body background="images/background.jpg" >
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navtop">
+	<a class="navbar-brand" href=index.html>
+		<img src="images/icon1.png" width="33" height="33" class="d-inline-block align-top">今日小站</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="about"><strong style="color: #000000">关于本站</strong></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<main role='main' class='container'>
+
+	<div data-v-1cb10f30="" data-v-5f4c81c1="" class="card">
+		<div class="login">
+			<div class="login-top" >
+				<img data-v-5f4c81c1="" data-v-1cb10f30="" src="images/login.png" alt="logo" class="logo">
+				<h3 style="text-align:center;">登录</h3>
+				<form  id="loginFrom" action="dealLogin" method="post">
+					<p style="color: red" th:text="${session.msg}"></p>
+					<p>
+						<input type="text" placeholder="用户名or邮箱" id="name" name="name"   tabindex="1"/></p>
+					<p>
+						<input type="password" placeholder="密码" id="password" name="password"   tabindex="2"/></p>
+
+					<div class="forgot" style="text-align: center">
+						<input type="submit" value="登录" class="submit">
+					</div>
+				</form>
+
+			</div>
+
+			<div data-v-6d7bb13c="" data-v-5f4c81c1="" data-v-1cb10f30=""><div data-v-6d7bb13c="" class="line"></div> <p data-v-6d7bb13c="" style="text-align: center;">第三方账号登录</p> <div data-v-6d7bb13c="" class="third-login"><i data-v-6d7bb13c="" class="iconfont weixin"></i> <i data-v-6d7bb13c="" class="iconfont weibo"></i> <i data-v-6d7bb13c="" class="iconfont qq"></i></div></div>
+			<div class="login-bottom" style="text-align: center">
+				<h6>如果是新用户，请先<a href="register.html">注册账号</a></h6>
+			</div>
+
+		</div>
+	</div>
+
+</main>
+<!--
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+-->
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

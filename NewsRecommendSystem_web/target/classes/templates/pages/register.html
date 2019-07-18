@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript"  src="login/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="login/jq%20va/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="login/jq%20va/dist/localization/messages_zh.js"></script>
+    <script type="text/javascript" src="login/register.check.js"></script>
+
+    <script>
+        var count;
+        $(document).ready(function () {
+            count=parseInt(getvalue("验证码"));
+            if(count>=0)
+            {settime1($("#123"));}
+        });
+
+        $(document).ready(function () {
+            $("#123").click(function () {
+                if($("#registerForm").valid()==false){return;}
+                addcookie("验证码","60");
+                settime1($("#123"));
+                alert("验证码发送成功，请去邮箱查看！");
+            })
+        });
+
+
+        function addcookie(name,value) {                 //value填写需要倒计时的时间
+
+
+            var cookieString=name+"="+escape(value);
+            document.cookie=cookieString;
+        }
+        function setcookie(name,value) {
+            var cookieString=name+"="+escape(value);
+            document.cookie=cookieString;
+        }
+        function getvalue(name) {
+            var strCookie = document.cookie;
+            var arr = strCookie.split("=");
+            if (arr[0] == name) {
+                return unescape(arr[1]);
+            }
+
+        }
+
+        function settime1(obj) {
+            count=parseInt(getvalue("验证码"));
+            if(count<=0){
+                obj.attr("disabled",false);
+                obj.val('点击发送激活码');
+                obj.css("background-color","#F45B4B");
+                return;
+            }
+            else {
+                obj.attr("disabled",true); //将按钮置为不可点击
+                obj.val(count+'秒后可重新获取');
+                obj.css("background-color","#818181");
+                count=count-1;
+                setcookie("验证码",count.toString());
+            }
+            setTimeout(function () {
+                settime1(obj);},1000);
+        }
+    </script>
+
+    <style type="text/css">
+        .error{
+            font-size: 12px;
+            color:red;
+        }
+    </style>
+
+
+    <meta charset="utf-8">
+
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><script src=https://res.wx.qq.com/open/js/jweixin-1.2.0.js></script><link href=https://static001.geekbang.org/static/account/css/app.f5b46efe82983d26a8a542a527ff8cd4.css rel=stylesheet>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>用户注册-今日小站</title>
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-wide.css" />
+
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+    <link rel="shortcut icon" href="images/icon1.png">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body background="images/background.jpg">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navtop">
+    <a class="navbar-brand" href=index.html>
+        <img src="images/icon1.png" width="33" height="33" class="d-inline-block align-top">今日小站</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="about"><strong style="color: #000000">关于本站</strong></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role='main' class='container'>
+
+    <div data-v-1cb10f30="" data-v-5f4c81c1="" class="card">
+        <div class="login">
+
+            <div class="login-top">
+                <img data-v-5f4c81c1="" data-v-1cb10f30="" src="images/clipboard.png" alt="logo" class="logo">
+                <h3 style="text-align:center;">注册账号</h3>
+                <form id="registerForm" action="dealRegister" method="post" style="text-align: center">
+                    <p><input style="background: #E8F0FE" id="email" type="text" placeholder="请输入你的邮箱"   tabindex="1" name="email"></p>
+                    <p><input type="text" placeholder="用户名(字母和数字)"  maxlength="16" tabindex="2" id="name" name="username"></p>
+                    <p><input type="password" placeholder="请输入密码"  maxlength="16" tabindex="3" id="sct" name="password" ></p>
+                    <p><input style="background: #E8F0FE" type="password" placeholder="确认密码"  maxlength="16" tabindex="4" id="resct" name="resct" ></p>
+                    <input type="button" value="点击发送激活邮件" id="123">
+                    <br>
+                    <br>
+                    <div class="forgot" style="text-align: center">
+                        <input type="submit" value="完成" >
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-bottom" style="text-align: center">
+                <h6>如果有账号,请直接&nbsp<a href="login.html">登陆账号</a></h6>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+/*
+	Phase Shift by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 11pt;
+	}
+
+	#skel-layers-wrapper {
+		padding-top: 44px;
+	}
+
+	header.major h2 {
+		font-size: 1.8em;
+	}
+
+	header.major .byline {
+		font-size: 1em;
+	}
+
+/* Form */
+
+	form {
+		width: 100%;
+	}
+
+/* Header */
+
+	#header {
+		display: none;
+	}
+
+/* Layers */
+
+	#titleBar {
+		background: #000;
+		height: 44px;
+		line-height: 44px;
+	}
+
+		#titleBar .title {
+			display: block;
+			position: relative;
+			font-weight: 700;
+			text-align: center;
+			line-height: 44px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: #fff;
+			z-index: 1;
+		}
+
+		#titleBar .title span {
+			display: none;
+		}
+
+		#titleBar .toggle {
+			height: 60px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 80px;
+			z-index: 2;
+		}
+
+			#titleBar .toggle:before {
+				content: "\f0c9";
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+			}
+
+			#titleBar .toggle:before {
+				background: none;
+				color: white;
+				display: block;
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+				width: 44px;
+				font-size: 1.2em;
+			}
+
+			#titleBar .toggle:after {
+				background: url("images/toggle.svg") 0px 0px no-repeat;
+				content: '';
+				display: block;
+				height: 13px;
+				left: 10px;
+				opacity: 0.75;
+				position: absolute;
+				top: 15px;
+				width: 20px;
+			}
+
+	#navPanel {
+		background: #000;
+	}
+
+		#navPanel .link {
+			border-top: solid 1px rgba(0, 0, 0, 0.15);
+			color: #888;
+			display: block;
+			height: 44px;
+			line-height: 44px;
+			padding: 0 1em 0 1em;
+			text-decoration: none;
+		}
+
+			#navPanel .link:first-child {
+				border-top: 0;
+			}
+
+			#navPanel .link.depth-0 {
+				color: #fff;
+			}
+
+			#navPanel .link .indent-1 {
+				display: inline-block;
+				width: 1em;
+			}
+
+			#navPanel .link .indent-2 {
+				display: inline-block;
+				width: 2em;
+			}
+
+			#navPanel .link .indent-3 {
+				display: inline-block;
+				width: 3em;
+			}
+
+			#navPanel .link .indent-4 {
+				display: inline-block;
+				width: 4em;
+			}
+
+			#navPanel .link .indent-5 {
+				display: inline-block;
+				width: 5em;
+			}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		display: block;
+		width: 100%;
+		max-width: 350px;
+		margin: 0em auto;
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		.button:hover {
+			background: #c72e6a;
+		}
+
+		input[type="submit"].alt,
+		input[type="reset"].alt,
+		input[type="button"].alt,
+		.button.alt {
+			letter-spacing: 0.20em;
+			border: 1px solid #FFF;
+			color: #0f1116;
+		}
+
+		input[type="submit"].fit,
+		input[type="reset"].fit,
+		input[type="button"].fit,
+		.button.fit {
+			width: 100%;
+		}
+
+		input[type="submit"].small,
+		input[type="reset"].small,
+		input[type="button"].small,
+		.button.small {
+			font-size: 0.8em;
+		}
+
+		input[type="submit"].medium,
+		input[type="reset"].medium,
+		input[type="button"].medium,
+		.button.medium {
+			padding: 0.80em 2em;
+			font-size: 1.2em;
+		}
+
+	ul.icons {
+		float: none;
+	}
+
+	ul.style {
+		padding-top: 0em;
+	}
+
+		ul.style li {
+			position: relative;
+			padding: 3em 0em 3em 6em;
+			border-top: solid 1px rgba(255, 255, 255, 0.2);
+		}
+
+		ul.style > :first-child {
+			border-top: none;
+		}
+
+		ul.style li:before {
+			position: absolute;
+			left: 0;
+			top: 1em;
+			display: block;
+			background: none;
+			color: #FFF;
+			width: 56px;
+			height: 56px;
+			text-align: center;
+			font-size: 3em;
+			border-radius: 6px;
+		}
+
+		ul.style h3 {
+			margin-bottom: 0.80em;
+			text-transform: uppercase;
+			font-weight: 800;
+			font-size: 1.4em;
+			color: #FFF;
+		}
+
+		ul.style span {
+			font-size: 1em;
+			line-height: 180%;
+			color: #FFF;
+		}
+
+/* Wrapper */
+
+	.wrapper.style1 {
+		padding-top: 4em;
+		padding-bottom: 2em;
+	}
+
+/* Banner */
+
+	#banner {
+		text-align: center;
+		color: #fff;
+		padding: 0em 1em;
+		margin-bottom: 6em;
+	}
+
+		#banner p {
+			font-size: 1.1em;
+			line-height: 1.75em;
+		}
+
+/* Main */
+
+	#main {
+		margin-top: 4em;
+	}
+
+/* Page */
+
+	#page {
+		padding: 3em 2em;
+	}
+
+/* Footer */
+
+	#footer {
+		text-align: center;
+	}
+
+/* Copyright */
+
+	#copyright {
+		text-align: center;
+	}
+
+		#copyright .copyright {
+			display: block;
+			padding-bottom: 1em;
+			font-size: 1em;
+		}

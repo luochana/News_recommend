@@ -1,0 +1,329 @@
+<!--
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>今日小站</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-wide.css" />
+	</noscript>
+	<script>
+        window.onload=getContent();
+        window.onload=Content1();
+        function getContent(){
+            $.ajax({
+                url:"pages/getNewsContent?id=[[${id}]]",
+                dataType:'JSON',
+                cache:false,
+                timeout:600000,
+                success:function (data) {
+                    var a=JSON.stringify(data,null,4);
+                    //var b=JSON.parse(data);
+                    var b=JSON.parse(a);
+
+                    $('#title').html(b.title);
+                    $('#content').html(b.content);
+                }
+            })
+        };
+
+
+          function  Content1() {
+                $.ajax({
+                    url: "ReadMore?id=[[${id}]]",
+                    dataType: 'JSON',
+                    cache: false,
+                    timeout: 600000,
+                    success: function (data) {
+                        var a = JSON.stringify(data, null, 4);
+                        //var b=JSON.parse(data);
+                        var b = JSON.parse(a);
+                        var i = 0;
+                        for (i; i < 6; i++) {
+                            var point = (i + 1).toString();
+                            var str1 = "#href" + point;
+                            var str2 = "#content" + point;
+                            $(str1).attr("href", b[i].url);
+                            $(str2).text(b[i].title);
+                            $(str2).attr("href", b[i].url);
+                            // alert(b[1].id);
+                        }
+                    }
+                })
+            }
+
+
+	</script>
+
+
+</head>
+<body>
+
+<div class="wrapper style1">
+
+	<div id="header" class="skel-panels-fixed">
+		<div id="logo">
+			<h1><a href="index.html">今日小站</a></h1>
+			<span class="tag">by LuoChan</span>
+		</div>
+		<nav id="nav">
+			<ul>
+				<li class="active"><a href="index.html">主页</a></li>
+				<li><a href="/pages/SelfIntrodution">关于本站</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="page" class="container">
+		<section>
+			<header class="major">
+				<h2 id="title"></h2>
+			</header>
+			<p id="content"></p>
+		</section>
+	</div>
+	<a href="#">
+		<div id="gotop1"> <strong>回到顶部</strong></div>
+	</a>
+
+	<div id="main1">
+		<p id="rea"><h1>相关推荐:</h1></p>
+	</div>
+	<div id="main2">
+		<div class="main3" id="first">
+			<div class="im" id="im1" style="display: inline-block"><a id="href1" href="#"><img class="img" src="b.jpg"></a></div>
+			<div class="neir">	<a class="contents" href="#" id="content1"><p class="namep"><strong>更多内容</strong></p></a></div>
+		</div>
+		<div class="main3">
+			<div class="im" id="im2" style="display: inline-block"><a id="href2" href="#"><img class="img" src="b.jpg"></a></div>
+			<div class="neir" ><a class="contents" href="#" id="content2"><p class="namep"><strong>更多内容</strong></p></a></div>
+		</div>
+		<div class="main3">
+			<div class="im" id="im3" style="display: inline-block"><a id="href3" href="#"><img class="img" src="b.jpg"></a></div>
+			<div class="neir" >	<a class="contents" href="#" id="content3"><p class="namep"><strong>更多内容</strong></p></a></div>
+		</div>
+		<div class="main3">
+			<div class="im" id="im4" style="display: inline-block"><a id="href4" href="#"><img class="img" src="b.jpg"></a></div>
+			<div class="neir" >	<a class="contents" href="#" id="content4"><p class="namep"><strong>更多内容</strong></p></a></div>
+
+		</div>
+		<div class="main3">
+			<div class="im" id="im5" style="display: inline-block"><a id="href5" href="#"><img class="img" src="b.jpg" ></a></div>
+			<div class="neir" >	<a class="contents" href="#" id="content5"><p class="namep"><strong>更多内容</strong></p></a></div>
+
+		</div>
+		<div class="main3" id="chenluo">
+			<div class="im" id="im6" style="display: inline-block"><a  id="href6" href="#"><img class="img" src="b.jpg"></a></div>
+			<div class="neir"><a class="contents" href="#" id="content6"><p class="namep"><strong>更多内容当时的v啊还是广东是个大傻祷告萨汗国的萨汗国的价格大厦的婚纱十大首富</strong></p></a></div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>更多内容-今日小站</title>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+
+	<link rel="stylesheet" href="css/skel.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style-wide.css" />
+
+	<script>
+		window.onload=getContent();
+		window.onload=Content1();
+		function getContent(){
+			$.ajax({
+				url:"pages/getNewsContent?id=[[${id}]]",
+				dataType:'JSON',
+				cache:false,
+				timeout:600000,
+				success:function (data) {
+					var a=JSON.stringify(data,null,4);
+					//var b=JSON.parse(data);
+					var b=JSON.parse(a);
+
+					$('#title').html(b.title);
+					$('#content').html(b.content);
+				}
+			})
+		};
+
+
+		function  Content1() {
+			$.ajax({
+				url: "ReadMore?id=[[${id}]]",
+				dataType: 'JSON',
+				cache: false,
+				timeout: 600000,
+				success: function (data) {
+					var a = JSON.stringify(data, null, 4);
+					//var b=JSON.parse(data);
+					var b = JSON.parse(a);
+					var i = 0;
+					for (i; i < 6; i++) {
+						var point = (i + 1).toString();
+						var str1 = "#href" + point;
+						var str2 = "#content" + point;
+						$(str1).attr("href", b[i].url);
+						$(str2).text(b[i].title);
+						$(str2).attr("href", b[i].url);
+						// alert(b[1].id);
+					}
+				}
+			})
+		}
+
+
+	</script>
+	<script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
+
+	<link rel="shortcut icon" href="images/icon1.png">
+
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body background="images/background.jpg">
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navtop">
+		<a class="navbar-brand" href=index.html>
+			<img src="images/icon1.png" width="33" height="33" class="d-inline-block align-top">今日小站</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="about"><strong style="color: #000000">关于本站</strong></a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+
+	<div id="page" class="container">
+		<section>
+			<header class="major">
+				<h2 id="title"></h2>
+			</header>
+			<p id="content"></p>
+		</section>
+	</div>
+	<a href="#">
+		<div id="gotop1"> <strong>回到顶部</strong></div>
+	</a>
+
+		<div class = 'table-responsive' id = "divcss5">
+			<table class="table table-hover">
+
+				<thead class="thead-dark">
+				<tr>
+					<th scope="col">相关推荐</th>
+				</tr>
+				</thead>
+
+				<tbody>
+
+				<tr class="main3" style="display: inline-block" id="first">
+					<td>
+						<div class="im" id="im1" style="display: inline-block"><a id="href1" href="#"></a></div>
+					</td>
+					<td >
+						<div class="neir">	<a class="contents" href="#" id="content1"><p class="namep"><strong>更多内容</strong></p></a></div>
+					</td>
+				</tr>
+
+				<tr class="main3" style="display: inline-block">
+					<td>
+						<div class="im" id="im2" style="display: inline-block"><a id="href2" href="#"></a></div>
+					</td>
+					<td >
+						<div class="neir">	<a class="contents" href="#" id="content2"><p class="namep"><strong>更多内容</strong></p></a></div>
+					</td>
+				</tr>
+
+				<tr class="main3" style="display: inline-block">
+					<td>
+						<div class="im" id="im3" style="display: inline-block"><a id="href3" href="#"></a></div>
+					</td>
+					<td >
+						<div class="neir">	<a class="contents" href="#" id="content3"><p class="namep"><strong>更多内容</strong></p></a></div>
+					</td>
+				</tr>
+
+				<tr class="main3" style="display: inline-block">
+					<td>
+						<div class="im" id="im4" style="display: inline-block"><a id="href4" href="#"></a></div>
+					</td>
+					<td >
+						<div class="neir">	<a class="contents" href="#" id="content4"><p class="namep"><strong>更多内容</strong></p></a></div>
+					</td>
+				</tr>
+
+				<tr class="main3" style="display: inline-block">
+					<td>
+						<div class="im" id="im5" style="display: inline-block"><a id="href5" href="#"></a></div>
+					</td>
+					<td >
+						<div class="neir">	<a class="contents" href="#" id="content5"><p class="namep"><strong>更多内容</strong></p></a></div>
+					</td>
+				</tr>
+
+				<tr class="main3" style="display: inline-block">
+					<td>
+						<div class="im" id="im6" style="display: inline-block"><a id="href6" href="#"></a></div>
+					</td>
+					<td >
+						<div class="neir">	<a class="contents" href="#" id="content6"><p class="namep"><strong>更多内容</strong></p></a></div>
+					</td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

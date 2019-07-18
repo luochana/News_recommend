@@ -1,0 +1,52 @@
+/*
+	Phase Shift by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+/* Basic */
+
+	h2 {
+		font-size: 1.25em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+
+	header.major h2 {
+		line-height: 1.25em;
+		font-size: 1.5em;
+	}
+
+	header.major .byline {
+		font-size: 1em;
+	}
+
+/* Lists */
+
+	ul.style {
+		padding-top: 0;
+		margin: 0;
+	}
+
+		ul.style li {
+			padding: 4em 0em 2em 6em;
+			border-top: solid 1px rgba(255, 255, 255, 0.2) !important;
+		}
+
+/* Wrapper */
+
+	.wrapper.style1 {
+		padding-top: 3em;
+	}
+
+	.wrapper.style2 {
+		padding: 3em 0;
+	}
+
+/* Page */
+
+	#page {
+		padding: 2em 1em;
+	}

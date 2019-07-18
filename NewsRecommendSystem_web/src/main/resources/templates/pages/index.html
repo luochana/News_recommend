@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>今日小站</title>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+
+	<link rel="stylesheet" href="css/skel.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style-wide.css" />
+
+	<script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		var myArray=new Array('news_recommendation','news_world','news_politics','news_tech','news_society','digital','news_military','news_entertainment','news_game','news_sports','news_car','news_finance');
+		window.onload=getContent(myArray[0]);
+		var co=0;
+		var num = 1;
+		function getContent(u){
+			var   newurl;
+			if(u=="news_recommendation")
+			{
+				newurl="pages/getNews?id=[[${id}]]";
+				// alert(newurl);
+			}
+			else
+			{
+				newurl="getChannelNews?channel="+u+"&index=0";
+				//alert(newurl);
+			}
+			$.ajax({
+				url:newurl,
+				dataType:'JSON',
+				cache:false,
+				timeout:600000,
+				success:function (data) {
+					var i=0;
+					var a = JSON.stringify(data, null, 4);
+					//var b=JSON.parse(data);
+					var b = JSON.parse(a);
+					for(i=0;i<6;i++){
+						var point = (i + 1).toString();
+						var str3="#title"+point;
+						var str1 = "#href" + point;
+						var str2 = "#content" + point;
+						var newsContent = b[i].content;
+						$(str1).attr("href", b[i].url);
+						$(str2).html(newsContent);
+						$(str3).html(b[i].title);
+					}
+
+					 //alert(b[1].id);
+				}
+			})
+		};
+		// alert("vfvf")
+		var number=0;
+
+
+		$(document).ready(function (){
+			var maxnum = 30;            //设置加载最多次数
+			var main = $("tbody");
+			//主体元素
+			$(window).scroll(b=function(){
+				var srollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+
+				//console.log("滚动条到顶部的垂直高度: "+$(document).scrollTop());
+				//console.log("页面的文档高度 ："+$(document).height());
+				//console.log('浏览器的高度：'+$(window).height());
+
+				totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+				if(($(document).height()-15) <= totalheight  && num*6 <= maxnum) {
+
+					//  alert("[[${session.channel}]]");
+					var u;
+					if(myArray[co]=="news_recommendation") {
+						u = "pages/getNews?id=[[${id}]]";
+						//	alert(u);
+					}
+					else
+					{
+						u="getChannelNews?channel="+myArray[co]+"&index="+num.toString();
+					}
+					$.ajax({
+						url:u,
+						dataType:'JSON',
+						cache:false,
+						timeout:600000,
+						success:function (data) {
+							var i=0;
+							var a = JSON.stringify(data, null, 4);
+							//var b=JSON.parse(data);
+							var b = JSON.parse(a);
+							//alert(b);
+							for(i=0;i<6;i++){
+								var point = (number+i+ 1).toString();
+								//alert(point);
+								var str1="hrefed"+point;
+								var str2="contented"+point;
+								//main.append("<div class=\"main5\"><div class=\"im\" id=\"im1\" style=\"display: inline-block\"><a id='hrefed' href=\"#\"><img class=\"img\" src=\"b.jpg\"></a></div><div class='neir' style=\"display: inline-block\"><a class='contents' href=\"#\" id=\"contented\"><p class='namep'><strong>更多内容....</strong></p></a></div></div>");
+								main.append("<tr class=\"main3\" style=\"display: inline-block\"><td><p class=\"titleh\"><strong id=\"contented\"></strong></p></td><td><a class=\"thead-dark\" id=\"hrefed\" href=\"#\"><button type=\"button\" class=\"btn btn-secondary\" >read more</button></a> </td></tr>")
+								$("#hrefed").attr("id",str1);
+								$("#contented").attr("id",str2);
+								str1="#"+str1;
+								str2="#"+str2;
+								$(str1).attr("href",b[i].url);
+								$(str2).attr("href",b[i].url);
+								$(str2).text(b[i].title);
+							}
+							number=number+6;
+							num=num+1;
+							// alert(b[1].0id);
+						}
+					});
+				}
+			});
+		});
+
+		$(document).ready(function () {
+			if("[[${session.msg1}]]" != "") {
+				$("#logAndReg").hide();
+				$("#quit").show();
+			}
+			else{
+				$("#logAndReg").show();
+				$("#quit").hide();
+			}
+		})
+
+
+		$(document).ready(function () {
+			$(".nav-link").click(function () {
+				var count=parseInt($(this).attr("id").charAt($(this).attr("id").length-1));
+				var count1=$(this).attr("id").charAt($(this).attr("id").length-2);
+				if(count1=="1"){
+					count=10+count;
+				}
+				if(count!=co){
+					$(".main5").remove();
+					num=1;
+					number=0;
+					var IDY="#"+"nav-link"+co.toString();
+
+					co=count;
+					getContent(myArray[co]);
+					var str = $(this).text();
+					str="<h1><strong>"+str+"热点"+":"+"</strong></h1>";
+					$("#Banner1").html(str);
+					$("#more1").html("<strong id=\"more\">更多相关:</strong>");
+				}
+			})
+		})
+
+	</script>
+
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+	<link rel="shortcut icon" href="images/icon1.png">
+
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body background="images/background.jpg" style="text-align: center">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navtop">
+	<a class="navbar-brand" href=index.html>
+		<img src="images/icon1.png" width="33" height="33" class="d-inline-block align-top">今日小站</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="about"><strong>关于本站</strong></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link0"><strong>推荐</strong></a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link1"><strong>国际</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link2"><strong>时政</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link3"><strong>科技</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link4"><strong>社会</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link5"><strong>数码</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link6"><strong>军事</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link7"><strong>娱乐</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link8"><strong>游戏</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link9"><strong>体育</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link10"><strong>汽车</strong></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" id="nav-link11"><strong>财经</strong></a>
+			</li>
+
+		</ul>
+
+
+		<div class="navbar-nav ml-auto" id = "logAndReg">
+
+			<a class="nav-item nav-link" href="login.html"><strong>登陆</strong></a>
+			<a class="nav-item nav-link " href="register.html"><strong>注册</strong></a>
+		</div>
+
+		<div class="navbar-nav ml-auto" id = "quit">
+			<li>
+				<img id="headface" src="images/head.png" width="30px"><a></a>
+				<div style="display: inline-block" id="nav2"><a th:text="${session.msg1}" style="color:red;cursor:pointer;"></a></div>
+			</li>
+		</div>
+
+
+	</div>
+</nav>
+
+<main role='main' class='container' >
+
+	<div class = 'table-responsive' id = "divcss5">
+		<table class="table table-hover">
+
+			<thead class="thead-dark">
+			<tr>
+				<th scope="col">新闻内容</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<tr class="main3" style="display: inline-block">
+				<td>
+					<p class="titleh"><strong id="title1"></strong></p>
+					<p id="content1">更多内容敬请期待...</p>
+				</td>
+
+				<td >
+					<a class="thead-dark" id="href1" href="#"><button type="button" class="btn btn-secondary" >read more</button></a>
+				</td>
+			</tr>
+
+			<tr class="main3" style="display: inline-block">
+				<td>
+					<p class="titleh"><strong id="title2"></strong></p>
+					<p id="content2">更多内容敬请期待...</p>
+				</td>
+
+				<td>
+					<a class="thead-dark" id="href2" href="#"><button type="button" class="btn btn-secondary" >read more</button></a>
+				</td>
+			</tr>
+
+
+			<tr class="main3" style="display: inline-block">
+				<td>
+					<p class="titleh"><strong id="title3"></strong></p>
+					<p id="content3">更多内容敬请期待...</p>
+				</td>
+
+				<td>
+					<a class="thead-dark" id="href3" href="#"><button type="button" class="btn btn-secondary" >read more</button></a>
+				</td>
+			</tr>
+
+			<tr class="main3" style="display: inline-block">
+				<td>
+					<p class="titleh"><strong id="title4"></strong></p>
+					<p id="content4">更多内容敬请期待...</p>
+				</td>
+
+				<td>
+					<a class="thead-dark" id="href4" href="#"><button type="button" class="btn btn-secondary" >read more</button></a>
+				</td>
+			</tr>
+
+
+			<tr class="main3" style="display: inline-block">
+				<td>
+					<p class="titleh"><strong id="title5"></strong></p>
+					<p id="content5">更多内容敬请期待...</p>
+				</td>
+
+				<td>
+					<a class="thead-dark" id="href5" href="#"><button type="button" class="btn btn-secondary" >read more</button></a>
+				</td>
+			</tr>
+
+
+			<tr class="main3" style="display: inline-block">
+				<td>
+					<p class="titleh"><strong id="title6"></strong></p>
+					<p id="content6">更多内容敬请期待...</p>
+				</td>
+
+				<td>
+					<a class="thead-dark" id="href6" href="#"><button type="button" class="btn btn-secondary" >read more</button></a>
+				</td>
+			</tr>
+
+			</tbody>
+		</table>
+	</div>
+</main>
+
+<a href="#">
+	<div id="gotop1"> <strong>回到顶部</strong></div>
+</a>
+<!--
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+-->
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
