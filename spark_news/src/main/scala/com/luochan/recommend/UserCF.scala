@@ -26,7 +26,7 @@ object UserCF {
       .option("url", "jdbc:mysql://localhost:3306/mydatabase?useUnicode=true&characterEncoding=utf-8")
       .option("dbtable", "newsLogs")
       .option("user", "root")
-      .option("password", "**********")
+      .option("password", "luochen1998")
       .load()
 
     jdbcDF.show()

@@ -22,7 +22,7 @@ object KafkaConsumer {
     val sparkConf = new SparkConf().setAppName("KafkaConsumer").setMaster("local[2]")
     val ssc = new StreamingContext(sparkConf, Seconds(20))
     val topicsSet = Set("test")
-    val brokers = "192.168.56.101:9092,192.168.56.102:9092,192.168.56.103:9092"
+    val brokers = "localhost:9092"
     val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers,
       "serializer.class" -> "kafka.serializer.StringDecoder")
     val messages = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](
