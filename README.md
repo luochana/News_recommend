@@ -1,11 +1,9 @@
 # News_recommend
 本次项目是基于大数据计算引擎的新闻推荐系统--"今日小站"，包含了爬虫，新闻网站（前端和后端），推荐系统（Spark）。<br>
 ## 前端效果：<br>
-![](https://github.com/luochana/News_recommend/tree/master/pic/pic1.png)
-<br>
-![](https://github.com/luochana/News_recommend/tree/master/pic/pic2.png)
-<br>
-![](https://github.com/luochana/News_recommend/tree/master/pic/pic3.png)
+![image](https://github.com/luochana/News_recommend/tree/master/pic/pic1.png)
+![image](https://github.com/luochana/News_recommend/tree/master/pic/pic2.png)
+![image](https://github.com/luochana/News_recommend/tree/master/pic/pic3.png)
 <br>
 ## 一.爬虫 <br>
 ### 开发环境： <br>
@@ -28,13 +26,13 @@
  IntelliJ IDEA + maven + git + linux <br>
 ### 软件架构： <br>
  zookeeper + flume + kafka +  spark  + mysql<br>
-###项目描述：<br>
+### 项目描述：<br>
 推荐系统计算两两文章间的相似度，并将与之最相似的10条数据id存入mysql。实时处理用户行为日志，将结果存入mysql。根据用户行为数据对用户进行推荐，并将结果存入mysql。<br>
 <br>
-![](https://github.com/luochana/News_recommend/tree/master/pic/pic4.png)
+![image](https://github.com/luochana/News_recommend/tree/master/pic/pic4.png)
 <br>
 
-###服务器规划：<br>
+### 服务器规划：<br>
  spark1:192.168.56.101 <br>
  spark2:192.168.56.102 <br>
  spark3:192.168.56.103 <br>
