@@ -1,5 +1,8 @@
 package com.luochen.web.Dao;
 
+
+import javax.persistence.Id;
+
 public class ItemSim {
     public Long getNewsId() {
         return newsId;
@@ -57,6 +60,7 @@ public class ItemSim {
         this.timeStamp = timeStamp;
     }
 
+    @Id
     private Long newsId;
     private String source_url;
     private String tag;

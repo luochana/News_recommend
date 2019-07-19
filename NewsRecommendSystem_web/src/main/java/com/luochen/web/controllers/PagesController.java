@@ -4,6 +4,7 @@ import com.luochen.recommend.ContentBaseRecommender.ContentBaseRecommender;
 import com.luochen.recommend.HotRecommender.hotRecommender;
 import com.luochen.recommend.UserBasedCollaborativeRecommender.MahoutUserBasedCollaborativeRecommender;
 import com.luochen.tools.RecommKits;
+import com.luochen.web.Dao.ItemSim;
 import com.luochen.web.Dao.ajaxNews;
 import com.luochen.web.Dao.interf.*;
 import com.luochen.web.Dao.newsKeywords;
@@ -38,15 +39,17 @@ public class PagesController {
     private RecommendationsRepository recommendationsRepository;
     @Autowired
     private UserAccountRepository userAccountRepository;
+    @Autowired
+    private ItemSimRepository itemSimRepository;
     @RequestMapping("/test")
     public String test()
     {
         return "pages/readMore";
     }
 
-    @RequestMapping("pages/getNewsContent")
+/*    @RequestMapping("pages/getNewsContent")
     @ResponseBody
-    public ajaxNews getNewsContent(@RequestParam("id")String id)
+    public ajaxNews getNewsContent1(@RequestParam("id")String id)
     {
         Optional<newsKeywords> targetNews=newsKeywordsRepository.findById(Long.valueOf(id));
         newsKeywords temp=targetNews.get();
@@ -56,7 +59,24 @@ public class PagesController {
         temp.setViewNewsNum(temp.getViewNewsNum()+1);
         newsKeywordsRepository.save(temp);
         return news;
+    }*/
+
+
+    @RequestMapping("pages/getNewsContent")
+    @ResponseBody
+    public ajaxNews getNewsContent(@RequestParam("id")String id)
+    {
+        Optional<ItemSim> targetNews=itemSimRepository.findById(Long.valueOf(id));
+        ItemSim temp=targetNews.get();
+        ajaxNews news=new ajaxNews();
+        news.setTitle(temp.getArticleTitle());
+        news.setContent(temp.getArticleContent());
+        return news;
     }
+
+
+
+
     @RequestMapping("/pages")
     public String readMore(@RequestParam("id")String id, Model model)
     {
@@ -72,7 +92,7 @@ public class PagesController {
 
     @ResponseBody
     @RequestMapping("pages/getNews")
-    public List<ajaxNews> getNews(@RequestParam("id")String id,HttpSession session)
+    public List<ajaxNews> getNews1(@RequestParam("id")String id,HttpSession session)
     {
        // session.setAttribute("channel","recommend");
         System.out.println(id);
@@ -127,6 +147,44 @@ public class PagesController {
             return ajaxNewsList;
         }
     }
+
+
+
+
+    @ResponseBody
+    @RequestMapping("pages/getNews")
+    public List<ajaxNews> getNews(@RequestParam("id")String id,HttpSession session) {
+
+        System.out.println(id);
+        List<ajaxNews> ajaxNewsList=new ArrayList();
+        if(id.isEmpty()||session.getAttribute("visitedFlag")=="visited")
+        {
+            Long newsNum = itemSimRepository.findCount();
+            int randomNewsId[] = randomArray(0, newsNum.intValue(), 6);
+            for (int i = 0; i < 6; ++i) {
+                System.out.println(randomNewsId[i]);
+                Optional<ItemSim> targetNews = itemSimRepository.findById((long) randomNewsId[i]);
+                ItemSim temp = targetNews.get();
+                ajaxNews temp1 = new ajaxNews();
+                temp1.setTitle(temp.getArticleTitle());
+                //  temp1.setContent(temp.getContent().substring(0, 80) + "....");
+                temp1.setUrl("/pages?id=" + randomNewsId[i]);
+                ajaxNewsList.add(temp1);
+            }
+            return ajaxNewsList;
+        }
+        else
+        {
+            session.setAttribute("visitedFlag","visited");
+            List<Long> userId=new ArrayList<>();
+
+
+        }
+
+        return ajaxNewsList;
+
+    }
+
 
 
     @RequestMapping("Login")
