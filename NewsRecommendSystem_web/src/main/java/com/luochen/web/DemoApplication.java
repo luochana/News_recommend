@@ -1,10 +1,6 @@
 package com.luochen.web;
 
-import com.luochen.recommend.ContentBaseRecommender.quartz.calculateKeyWordsTriggerRunner;
-import com.luochen.web.Dao.interf.NewsKeywordsRepository;
-import com.luochen.web.Dao.interf.NewsRepository;
-import org.quartz.SchedulerException;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,14 +1,7 @@
 package com.luochen.web.controllers;
 
-import com.luochen.recommend.ContentBaseRecommender.ContentBaseRecommender;
-import com.luochen.recommend.HotRecommender.hotRecommender;
-import com.luochen.recommend.UserBasedCollaborativeRecommender.MahoutUserBasedCollaborativeRecommender;
-import com.luochen.tools.RecommKits;
-import com.luochen.web.Dao.ItemSim;
-import com.luochen.web.Dao.ajaxNews;
+import com.luochen.web.Dao.*;
 import com.luochen.web.Dao.interf.*;
-import com.luochen.web.Dao.newsKeywords;
-import com.luochen.web.Dao.userAccount;
 import com.luochen.web.register.utils.CodeUtils;
 import com.luochen.web.register.utils.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.html.Option;
 import java.math.BigInteger;
 import java.util.*;
 
@@ -30,44 +24,22 @@ import static com.luochen.web.register.tools.registerKits.testUserAccount;
 @EnableAutoConfiguration
 public class PagesController {
     @Autowired
-    private AccountRepository accountRepository;
-    @Autowired
-    private NewsKeywordsRepository newsKeywordsRepository;
-    @Autowired
-    private NewsLogsRepository newsLogsRepository;
-    @Autowired
-    private RecommendationsRepository recommendationsRepository;
-    @Autowired
     private UserAccountRepository userAccountRepository;
     @Autowired
     private ItemSimRepository itemSimRepository;
+    @Autowired
+    private UserCFRepository userCFRepository;
     @RequestMapping("/test")
     public String test()
     {
         return "pages/readMore";
     }
 
-/*    @RequestMapping("pages/getNewsContent")
-    @ResponseBody
-    public ajaxNews getNewsContent1(@RequestParam("id")String id)
-    {
-        Optional<newsKeywords> targetNews=newsKeywordsRepository.findById(Long.valueOf(id));
-        newsKeywords temp=targetNews.get();
-        ajaxNews news=new ajaxNews();
-        news.setTitle(temp.getTitle());
-        news.setContent(temp.getContent());
-        temp.setViewNewsNum(temp.getViewNewsNum()+1);
-        newsKeywordsRepository.save(temp);
-        return news;
-    }*/
-
-
     @RequestMapping("pages/getNewsContent")
     @ResponseBody
     public ajaxNews getNewsContent(@RequestParam("id")String id)
     {
-        Optional<ItemSim> targetNews=itemSimRepository.findById(Long.valueOf(id));
-        ItemSim temp=targetNews.get();
+        ItemSim temp=itemSimRepository.findNews(Long.valueOf(id));
         ajaxNews news=new ajaxNews();
         news.setTitle(temp.getArticleTitle());
         news.setContent(temp.getArticleContent());
@@ -92,79 +64,19 @@ public class PagesController {
 
     @ResponseBody
     @RequestMapping("pages/getNews")
-    public List<ajaxNews> getNews1(@RequestParam("id")String id,HttpSession session)
-    {
-       // session.setAttribute("channel","recommend");
-        System.out.println(id);
-        List<ajaxNews> ajaxNewsList=new ArrayList();
-        if(id.isEmpty())
-        {
-            Long newsNum = newsKeywordsRepository.findCount();
-            int randomNewsId[] = randomArray(0, newsNum.intValue(), 6);
-            for (int i = 0; i < 6; ++i) {
-                System.out.println(randomNewsId[i]);
-                Optional<newsKeywords> targetNews = newsKeywordsRepository.findById((long) randomNewsId[i]);
-                newsKeywords temp = targetNews.get();
-                ajaxNews temp1 = new ajaxNews();
-                temp1.setTitle(temp.getTitle());
-              //  temp1.setContent(temp.getContent().substring(0, 80) + "....");
-                temp1.setUrl("/pages?id=" + randomNewsId[i]);
-                ajaxNewsList.add(temp1);
-
-            }
-            return ajaxNewsList;
-        }
-        else
-        {
-            List<Long> userId=new ArrayList<>();
-            userId.add(Long.parseLong(id));
-            MahoutUserBasedCollaborativeRecommender mahoutUserBasedCollaborativeRecommender=new MahoutUserBasedCollaborativeRecommender();
-            Set<Long> set= mahoutUserBasedCollaborativeRecommender.recommend(userId,newsLogsRepository,newsKeywordsRepository,recommendationsRepository);
-//            for(Long i:set)
-//            {
-//                System.out.println(i);
-//            }
-            if(set.size()<6)
-            {
-                hotRecommender hotrecommender=new hotRecommender();
-               List<BigInteger> idList=hotrecommender.recommend(0,6-set.size(),newsKeywordsRepository);
-               for(BigInteger hotNewsId:idList)
-               {
-                   set.add(hotNewsId.longValue());
-                   System.out.println(hotNewsId);
-               }
-            }
-            for (Long Id:set) {
-                Optional<newsKeywords> targetNews = newsKeywordsRepository.findById(Id);
-                newsKeywords temp = targetNews.get();
-                ajaxNews temp1 = new ajaxNews();
-                temp1.setTitle(temp.getTitle());
-                //  temp1.setContent(temp.getContent().substring(0, 80) + "....");
-                temp1.setUrl("/pages?id=" + Id);
-                ajaxNewsList.add(temp1);
-            }
-
-            return ajaxNewsList;
-        }
-    }
-
-
-
-
-    @ResponseBody
-    @RequestMapping("pages/getNews")
     public List<ajaxNews> getNews(@RequestParam("id")String id,HttpSession session) {
 
         System.out.println(id);
         List<ajaxNews> ajaxNewsList=new ArrayList();
+        Long newsNum = itemSimRepository.findCount();
         if(id.isEmpty()||session.getAttribute("visitedFlag")=="visited")
         {
-            Long newsNum = itemSimRepository.findCount();
+            //Long newsNum = itemSimRepository.findCount();
             int randomNewsId[] = randomArray(0, newsNum.intValue(), 6);
             for (int i = 0; i < 6; ++i) {
                 System.out.println(randomNewsId[i]);
-                Optional<ItemSim> targetNews = itemSimRepository.findById((long) randomNewsId[i]);
-                ItemSim temp = targetNews.get();
+                ItemSim temp = itemSimRepository.findNews((long) randomNewsId[i]);
+             //   ItemSim temp = targetNews.get();
                 ajaxNews temp1 = new ajaxNews();
                 temp1.setTitle(temp.getArticleTitle());
                 //  temp1.setContent(temp.getContent().substring(0, 80) + "....");
@@ -177,12 +89,36 @@ public class PagesController {
         {
             session.setAttribute("visitedFlag","visited");
             List<Long> userId=new ArrayList<>();
+            Optional<UserCF> userCF=userCFRepository.findById(Long.parseLong(id));
+            UserCF temp=userCF.get();
+            String recommendStr=temp.getRecommendStr();
+            String recommendIds[]= recommendStr.split(",");
+            for (int i=0;i<recommendIds.length;++i)
+            {
+                Optional<ItemSim> targetNews=itemSimRepository.findById(Long.parseLong(recommendIds[i]));
+                ItemSim tempItemSim=targetNews.get();
+                ajaxNews temp1=new ajaxNews();
+                temp1.setTitle(tempItemSim.getArticleTitle());
+                temp1.setUrl("/pages?id=" + recommendIds[i]);
+                ajaxNewsList.add(temp1);
+            }
 
-
+            if(recommendIds.length<6)
+            {
+                int randomNewsId[] = randomArray(0, newsNum.intValue(), 6-recommendIds.length);
+                for (int i = 0; i < randomNewsId.length; ++i) {
+                    System.out.println(randomNewsId[i]);
+                    Optional<ItemSim> targetNews = itemSimRepository.findById((long) randomNewsId[i]);
+                    ItemSim temp2 = targetNews.get();
+                    ajaxNews temp1 = new ajaxNews();
+                    temp1.setTitle(temp2.getArticleTitle());
+                    //  temp1.setContent(temp.getContent().substring(0, 80) + "....");
+                    temp1.setUrl("/pages?id=" + randomNewsId[i]);
+                    ajaxNewsList.add(temp1);
+                }
+            }
+           return ajaxNewsList;
         }
-
-        return ajaxNewsList;
-
     }
 
 
@@ -291,50 +227,40 @@ public class PagesController {
         }
        return "pages/error";
     }
+
+
     @ResponseBody
     @GetMapping("ReadMore")
     public List<ajaxNews> ReadMore(@RequestParam("id")String id)
     {
-        HashMap<String,Double> map = new HashMap<String, Double>();
-        Long Id=Long.parseLong(id);
-        Optional<newsKeywords> targetNews=newsKeywordsRepository.findById(Id);
-        newsKeywords temp=targetNews.get();
-        String kwStr[]=temp.getKeyWords().split(";");
-        for(String str : kwStr)
-        {
-            String arr[]=str.split(",");
-            map.put(arr[0],Double.parseDouble(arr[1]));
-        }
-        ContentBaseRecommender recommender=new ContentBaseRecommender();
-        HashMap<Long,Double> result=recommender.recommender(map,newsKeywordsRepository);
         List<ajaxNews> ajaxNewsList=new ArrayList<>();
-        for(Long tempId:result.keySet())
+        ItemSim targetNews=itemSimRepository.findNews(Long.parseLong(id));
+        String recommendIds[]=targetNews.getSim().split(",");
+        for (int i=0;i<recommendIds.length-1;++i)
         {
-             targetNews=newsKeywordsRepository.findById(tempId);
-             temp=targetNews.get();
-             ajaxNews tempNews=new ajaxNews();
-             tempNews.setTitle(temp.getTitle());
-             tempNews.setUrl("/pages?id="+temp.getId());
-             ajaxNewsList.add(tempNews);
-            // System.out.println(temp.getTitle());
-            // System.out.println(temp.getContent());
+            ItemSim temp=itemSimRepository.findNews(Long.parseLong(recommendIds[i]));
+            ajaxNews tempNews=new ajaxNews();
+            tempNews.setTitle(temp.getArticleTitle());
+            tempNews.setUrl("/pages?id="+recommendIds[i]);
+            ajaxNewsList.add(tempNews);
         }
 
         return ajaxNewsList;
     }
+
 
     @ResponseBody
     @RequestMapping("getChannelNews")
     public List<ajaxNews> getClassifyNews(@RequestParam("channel") String channel,@RequestParam("index") String index,HttpSession session)
     {
         List<ajaxNews> ajaxNewsList = new ArrayList<ajaxNews>();
-        List<newsKeywords> classifyNews = new ArrayList<newsKeywords>();
+        List<ItemSim> classifyNews = new ArrayList<ItemSim>();
         try {
-            classifyNews = newsKeywordsRepository.getClassifyNews(RecommKits.getCurrentTimeStr(), channel, Integer.parseInt(index) * 6, 6);
-            for (newsKeywords nskwd : classifyNews) {
+            classifyNews =itemSimRepository.getClassifyNews( channel, Integer.parseInt(index) * 6, 6);
+            for (ItemSim nskwd : classifyNews) {
                 ajaxNews temp = new ajaxNews();
-                temp.setTitle(nskwd.getTitle());
-                temp.setUrl("/pages?id=" + nskwd.getId());
+                temp.setTitle(nskwd.getArticleTitle());
+                temp.setUrl("/pages?id=" + nskwd.getNewsId());
                 ajaxNewsList.add(temp);
             }
             session.setAttribute("channel",channel);

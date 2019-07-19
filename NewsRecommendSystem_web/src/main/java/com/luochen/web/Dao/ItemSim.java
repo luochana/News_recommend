@@ -1,8 +1,9 @@
 package com.luochen.web.Dao;
 
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
+@Entity
 public class ItemSim {
     public Long getNewsId() {
         return newsId;

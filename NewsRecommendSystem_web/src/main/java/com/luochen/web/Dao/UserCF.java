@@ -1,7 +1,9 @@
 package com.luochen.web.Dao;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class UserCF {
     public Long getUserId() {
         return userId;
