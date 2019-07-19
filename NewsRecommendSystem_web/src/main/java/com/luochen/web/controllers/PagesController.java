@@ -16,8 +16,10 @@ import javax.swing.text.html.Option;
 import java.math.BigInteger;
 import java.util.*;
 
+import static com.luochen.tools.RandomNums.getCurrentTimeStr;
 import static com.luochen.tools.RandomNums.randomArray;
 import static com.luochen.web.register.tools.registerKits.testUserAccount;
+import static org.apache.hadoop.fs.FileSystem.LOG;
 
 @SuppressWarnings("deprecation")
 @Controller
@@ -37,12 +39,14 @@ public class PagesController {
 
     @RequestMapping("pages/getNewsContent")
     @ResponseBody
-    public ajaxNews getNewsContent(@RequestParam("id")String id)
+    public ajaxNews getNewsContent(@RequestParam("id")String id, HttpSession session)
     {
         ItemSim temp=itemSimRepository.findNews(Long.valueOf(id));
         ajaxNews news=new ajaxNews();
         news.setTitle(temp.getArticleTitle());
         news.setContent(temp.getArticleContent());
+       // System.out.println(session.getAttribute("usrId")+","+id+","+"1"+","+getCurrentTimeStr());
+        LOG.fatal(session.getAttribute("usrId")+","+id+","+"1"+","+getCurrentTimeStr());
         return news;
     }
 

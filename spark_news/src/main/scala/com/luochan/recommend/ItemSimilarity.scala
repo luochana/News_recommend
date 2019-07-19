@@ -29,7 +29,7 @@ object ItemSimilarity {
       .option("url", "jdbc:mysql://localhost:3306/mydatabase?useUnicode=true&characterEncoding=utf-8")
       .option("dbtable", "news")
       .option("user", "root")
-      .option("password", "luochen1998")
+      .option("password", "*******")
       .load()
 
     jdbcDF.show(100,false)
@@ -105,17 +105,17 @@ object ItemSimilarity {
       })
       DBLocalUtils.close(connection)
 
-      def resultInsertIntoMysql(newsId:Int,source_url:String,tag:String,articleContent:String,articleTitle:String,sim:String,timeStamp:String): Unit ={
+      def resultInsertIntoMysql(news_id:Int,source_url:String,tag:String,article_content:String,article_title:String,sim:String,time_stamp:String): Unit ={
         try{
           val sql="insert into ItemSim values(?,?,?,?,?,?,?)"
           val pst=connection.prepareStatement(sql)
-          pst.setInt(1, newsId)
+          pst.setInt(1, news_id)
           pst.setString(2, source_url)
           pst.setString(3,tag)
-          pst.setString(4,articleContent)
-          pst.setString(5,articleTitle)
+          pst.setString(4,article_content)
+          pst.setString(5,article_title)
           pst.setString(6,sim)
-          pst.setString(7,timeStamp)
+          pst.setString(7,time_stamp)
           pst.execute()
         }
         catch{

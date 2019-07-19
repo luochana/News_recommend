@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd06b73e-eea6-47f2-b9d3-91001ea221ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../NewsRecommendSystem_web/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewsRecommendSystem_web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NewsRecommendSystem_web/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewsRecommendSystem_web/src/main/java/com/luochen/web/controllers/PagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewsRecommendSystem_web/src/main/java/com/luochen/web/controllers/PagesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/UserCF.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/recommend/UserCF.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,32 +21,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding>
+                <element signature="e#31#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala">
+        <entry file="file://$PROJECT_DIR$/conf/flume/log4j-flume-kafka.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-              <folding>
-                <element signature="e#31#57#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="480">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -66,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/conf/zookeeper/zoo.cfg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -84,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/conf/kafka/consumer.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -105,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/conf/kafka/producer.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -114,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/conf/kafka/server.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="930">
-              <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+              <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -177,12 +178,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="spark_news" type="b2602c69:ProjectViewProjectNode" />
               <item name="spark_news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark_news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark_news" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark_news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark_news" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="flume" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spark_news" type="b2602c69:ProjectViewProjectNode" />
@@ -219,11 +232,19 @@
               <item name="luochan" type="462c0819:PsiDirectoryNode" />
               <item name="recommend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="spark_news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark_news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="luochan" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -336,17 +357,19 @@
       <workItem from="1563419224183" duration="402000" />
       <workItem from="1563419959573" duration="7970000" />
       <workItem from="1563438424010" duration="4774000" />
+      <workItem from="1563520053500" duration="315000" />
+      <workItem from="1563520507749" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51957000" />
+    <option name="totallyTimeSpent" value="52868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892703" visible="true" weight="0.14643237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892703" visible="true" weight="0.14962727" />
       <window_info id="Structure" order="1" sideWeight="0.50107294" side_tool="true" weight="0.1256656" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -417,45 +440,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/flume/log4j-flume-kafka.conf">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        <state relative-caret-position="1740">
+          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/kafka/consumer.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/kafka/producer.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/kafka/server.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/zookeeper/zoo.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/spark/spark-env.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="64" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="64" />
+        <state relative-caret-position="435">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -469,13 +464,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala">
+    <entry file="file://$PROJECT_DIR$/conf/zookeeper/zoo.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="e#31#57#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/spark/spark-env.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="64" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/kafka/consumer.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -489,17 +495,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/utils/DBLocalUtils.scala">
+    <entry file="file://$PROJECT_DIR$/conf/kafka/producer.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="540">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/recommend/ItemSimilarity.scala">
+    <entry file="file://$PROJECT_DIR$/conf/kafka/server.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        <state relative-caret-position="930">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/flume/log4j-flume-kafka.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/luochan/streaming/KafkaConsumer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#31#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
