@@ -1,9 +1,9 @@
 # News_recommend
 本次项目是基于大数据计算引擎的新闻推荐系统--"今日小站"，包含了爬虫，新闻网站（前端和后端），推荐系统（Spark）。<br>
 ## 前端效果：<br>
-![image](https://github.com/luochana/News_recommend/tree/master/pic/pic1.png) <br>
-![image](https://github.com/luochana/News_recommend/tree/master/pic/pic2.png) <br>
-![image](https://github.com/luochana/News_recommend/tree/master/pic/pic3.png) <br>
+![image](https://github.com/luochana/githubPicture/blob/master/pic1.png) <br>
+![image](https://github.com/luochana/githubPicture/blob/master/pic2.png) <br>
+![image](https://github.com/luochana/githubPicture/blob/master/pic3.png) <br>
 <br>
 ## 一.爬虫 <br>
 ### 开发环境： <br>
@@ -29,7 +29,7 @@
 ### 项目描述：<br>
 推荐系统计算两两文章间的相似度，并将与之最相似的10条数据id存入mysql。实时处理用户行为日志，将结果存入mysql。根据用户行为数据对用户进行推荐，并将结果存入mysql。<br>
 <br>
-![image](https://github.com/luochana/News_recommend/tree/master/pic/pic4.png)
+![image](https://github.com/luochana/githubPicture/blob/master/pic4.png)
 <br>
 
 ### 服务器规划：<br>
