@@ -118,7 +118,6 @@
             <version>1.2.6</version>
             <type>pom</type>
         </dependency>
-
         <dependency>
             <groupId>org.ansj</groupId>
             <artifactId>ansj_seg</artifactId>
@@ -187,3 +186,20 @@
     </build>
 
 </project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
