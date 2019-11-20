@@ -12,14 +12,6 @@ import org.apache.spark.sql.SparkSession
 
 object ItemSimilarity {
 
-  def transposeRowMatrix(m: RowMatrix): RowMatrix = {
-    val indexedRM = new IndexedRowMatrix(m.rows.zipWithIndex.map({
-      case (row, idx) => new IndexedRow(idx, row)}))
-    val transposed = indexedRM.toCoordinateMatrix().transpose.toIndexedRowMatrix()
-    new RowMatrix(transposed.rows
-      .map(idxRow => (idxRow.index, idxRow.vector))
-      .sortByKey().map(_._2))
-  }
 
   def main(arges: Array[String]): Unit= {
 
@@ -42,9 +34,8 @@ object ItemSimilarity {
     val idfModel = idf.fit(featurizedData)
     val rescaledData = idfModel.transform(featurizedData)
     val rows = rescaledData.select("features").rdd.map(x => x(0).asInstanceOf[SparseVector].toDense).map(org.apache.spark.mllib.linalg.Vectors.fromML)
-    val mat = new RowMatrix(rows)
-    val mat1 = transposeRowMatrix(mat).rows.map(x => x.asInstanceOf[org.apache.spark.mllib.linalg.SparseVector].toDense).map(x => x.asInstanceOf[org.apache.spark.mllib.linalg.Vector])
-    val mat3 = new RowMatrix(mat1)
+    val mat3 = new RowMatrix(rows)
+
 
     //计算两两向量间的余弦相似度
     val simsEstimate = mat3.columnSimilarities().entries.map { case MatrixEntry(row: Long, col: Long, sim: Double) => (row, col, sim) }
