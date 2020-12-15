@@ -1,13 +1,13 @@
 package com.luochan.recommend
 
 import java.sql.Connection
+
 import breeze.linalg.min
 import com.luochan.tools.RecommendKits
 import com.luochan.utils.DBLocalUtils
-import org.apache.spark.ml.feature.HashingTF
-import org.apache.spark.ml.feature.IDF
+import org.apache.spark.ml.feature.{HashingTF, IDF}
 import org.apache.spark.ml.linalg.SparseVector
-import org.apache.spark.mllib.linalg.distributed.{IndexedRow, IndexedRowMatrix, MatrixEntry, RowMatrix}
+import org.apache.spark.mllib.linalg.distributed.{MatrixEntry, RowMatrix}
 import org.apache.spark.sql.SparkSession
 
 object ItemSimilarity {

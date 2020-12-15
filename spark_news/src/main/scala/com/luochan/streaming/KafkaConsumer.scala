@@ -53,7 +53,7 @@ object KafkaConsumer {
         timeStamp1
       else
         timeStamp2
-    }
+      }
     }
 
     var connection:Connection = null
