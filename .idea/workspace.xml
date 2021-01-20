@@ -1,52 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="904bc468-f5a4-4d89-8863-6511a3384ec0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsRecommendSystem_web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NewsRecommendSystem_web/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/src/main/scala/com/luochan/recommend/ItemSimilarity.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/src/main/scala/com/luochan/streaming/KafkaConsumer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$main$1$$anonfun$apply$mcVI$sp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$main$1$$anonfun$apply$mcVI$sp$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$anonfun$transposeRowMatrix$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$$typecreator2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/ItemSimilarity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/UserCF$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/UserCF$$anonfun$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/UserCF$.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/recommend/UserCF$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/streaming/KafkaConsumer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/streaming/KafkaConsumer$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/utils/DBLocalUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/spark_news/target/classes/com/luochan/utils/DBLocalUtils$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink_news/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink_news/.idea/workspace.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="411" />
@@ -54,6 +27,7 @@
     <option name="width" value="1350" />
     <option name="height" value="1005" />
   </component>
+  <component name="ProjectId" id="1nIZkTZIGhrF2wYCi1Q20TZUrI9" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -74,6 +48,10 @@
       <pane id="PackagesPane" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -84,18 +62,20 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -108,6 +88,7 @@
       <updated>1608056366178</updated>
       <workItem from="1608056367888" duration="157000" />
       <workItem from="1608056534681" duration="18000" />
+      <workItem from="1611079709261" duration="123000" />
     </task>
     <servers />
   </component>
@@ -148,7 +129,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
